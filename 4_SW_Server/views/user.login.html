@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+	<? include('blocks/head.html'); ?>
+	
+	<body>
+		<div id="container">
+
+			<? include('blocks/header.html'); ?>
+
+			<section>
+				<h1>Connexion.</h1>
+				<form class="user" action="<?=$config['rel_root_folder']?>user/login" method="post" id="login">
+					<? if(isset($_GET['error']) AND $_GET['error']==1) { ?>
+						<p style="color: red;">Erreur lors de la connexion, merci de réessayer.</p>
+					<? } ?>
+					<? if(isset($_GET['status']) AND $_GET['status']=="created") { ?>
+						<p style="color: #006600;">Votre compte a été créé, vous pouvez vous connecter.</p>
+					<? } ?>
+					<? if(isset($_GET['status']) AND $_GET['status']=="password_sent") { ?>
+						<p style="color: #006600;">Un nouveau mot de passe vous a été envoyé par mail.</p>
+					<? } ?>
+					<input type="text" name="login" id="login" placeholder="Nom d'utilisateur">
+					<input type="password" name="password" id="password" placeholder="Mot de passe">
+					<input type="submit" name="submit" value="Se connecter">
+					<p style="text-align: center;">
+						<a href="<?=$config['rel_root_folder']?>user/password_lost">Mot de passe oublié</a>
+					</p>
+				</form>
+			</section>
+
+			<? include('blocks/footer.html'); ?>
+
+		</div>
+	</body>
+</html>

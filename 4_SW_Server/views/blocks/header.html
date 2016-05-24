@@ -1,0 +1,19 @@
+		<header>
+			<div id="Hcontent">
+				<nav>
+					<? if($user->rank == 0) { ?>
+						<a href="<?=$config['rel_root_folder']?>user/signin">Inscription</a>
+						<a href="<?=$config['rel_root_folder']?>user/login">Connexion</a>
+					<? } else { ?>
+						<a href="<?=$config['rel_root_folder']?>station/userlist">Mes stations</a>
+						<a href="<?=$config['rel_root_folder']?>user/account">Mon compte</a>
+						<a href="<?=$config['rel_root_folder']?>user/logout">Déconnexion</a>
+					<? } ?>
+				</nav>
+				<p>
+					<a href="<?=$config['rel_root_folder']?>" id="logo">
+						<img alt="Logo Naïo Technologies" src="<?=$config['views_url'].'imgs/'?>naio.jpg">
+					</a>
+				</p>
+			</div>
+		</header>

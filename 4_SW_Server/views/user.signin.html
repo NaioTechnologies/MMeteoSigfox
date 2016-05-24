@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+	<? include('blocks/head.html'); ?>
+	
+	<body>
+		<div id="container">
+
+			<? include('blocks/header.html'); ?>
+
+			<section>
+				<h1>Inscription.</h1>
+				<form class="user" action="<?=$config['rel_root_folder']?>user/signin" method="post" id="signin">
+					<? if(isset($_GET['error']) AND $_GET['error']=="name") { ?>
+						<p style="color: red;">Veuillez choisir un autre nom d'utilisateur.</p>
+					<? } ?>
+					<? if(isset($_GET['error']) AND $_GET['error']=="mail") { ?>
+						<p style="color: red;">Cette adresse mail est déjà prise.</p>
+					<? } ?>
+					<? if(isset($_GET['error']) AND $_GET['error']=="empty") { ?>
+						<p style="color: red;">Merci de remplir tous les champs, il n'y en a que trois.</p>
+					<? } ?>
+					<? if(isset($_GET['error']) AND $_GET['error']=="captcha") { ?>
+						<p style="color: red;">Nous n'avons pas pu vérifier que vous êtes un humain.<br>
+						Avez-vous javascript activé et attendu la fin du compte à rebours ?</p>
+					<? } ?>
+					<input type="text" name="login" id="login" placeholder="Nom d'utilisateur">
+					<input type="password" name="password" id="password" placeholder="Mot de passe">
+					<input type="text" name="mail" id="mail" placeholder="Adresse mail">
+					<p id="captcha">
+						<input type="hidden" id="captchahidden" name="captcha" value="10">
+						<span id="captchatext">Merci d'attendre <b id="captchasec">10 s</b> avant de pouvoir vous inscrire.<br>
+						<small>Ceci nous permet de laisser les robots à la porte.</small></span>
+						<input disabled id="captchasubmit" style="display:none;" type="submit" name="submit" value="S'inscrire">
+					</p>
+				</form>
+			</section>
+
+			<? include('blocks/footer.html'); ?>
+
+		</div>
+	</body>
+</html>

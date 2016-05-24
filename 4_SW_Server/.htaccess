@@ -1,0 +1,21 @@
+AddDefaultCharset UTF-8
+
+RewriteEngine On
+
+# We redirect all 404 errors to the index.php file.
+# That allows to manage custom URL addresses
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . ./index.php [L]
+
+php_value short_open_tag 1
+php_value display_errors 1
+
+#<ifmodule mod_expires.c>
+#  ExpiresActive On
+#  ExpiresByType text/css "access plus 2 hours"
+#  ExpiresByType application/javascript "access plus 2 hours"
+#  ExpiresByType image/png "access plus 2 hours"
+#  ExpiresByType image/jpg "access plus 2 hours"
+#  ExpiresByType image/jpeg "access plus 2 hours"
+#</ifmodule>

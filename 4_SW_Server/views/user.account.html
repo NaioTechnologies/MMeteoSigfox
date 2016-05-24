@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+	<? include('blocks/head.html'); ?>
+	
+	<body>
+		<div id="container">
+
+			<? include('blocks/header.html'); ?>
+
+			<section>
+					<h1>&Eacute;diter le compte <?=$user->username?></h1>
+					<article>
+						<? if(isset($nameError) AND $nameError==1) { ?>
+							<p style="color: #660000;">Veuillez choisir un autre nom d'utilisateur.</p>
+						<? } ?>
+						<? if(isset($mailError) AND $mailError==1) { ?>
+							<p style="color: #660000;">Veuillez choisir une autre adresse mail.</p>
+						<? } ?>
+						<? if(isset($updated) AND $updated==1) { ?>
+							<p style="color: #006600;">Le profil a été mis à jour.</p>
+						<? } ?>
+
+						<? if ($user->stepalert == 0) { ?>
+							<p style="color: #006600;">Vous n'avez aucune alerte en cours.</p>
+						<? } else { ?>
+							<p style="color: #660000;"><b>Vous avez une alerte en cours depuis <?=$user->lastalert_rised?>.</b></p>
+						<? } ?>
+
+						<br>
+
+						<form action="<?=$config['rel_root_folder']?>user/account" method="post" class="edituser">
+								<div id="description">
+									<ul>
+										<li><label for="username">Nom d'utilisateur :</label><input name="username" id="username" type="text" value="<?=$user->username?>"></li>
+										<li><label for="mail">Adresse mail :</label><input name="mail" id="mail" type="text" value="<?=$user->mail?>" placeholder="Pour recevoir les alertes configurées"></li>
+										<li><label for="password">Mot de passe :</label><input name="password" id="password" type="password" placeholder="Nouveau mot de passe"></li>
+										<li><label for="phone">Téléphone mobile :</label><input name="phone" id="phone" type="text" value="<?=$user->phone?>" placeholder="Pour recevoir les alertes configurées"></li>
+
+										<input name="submit" id="submit" type="submit" value="Envoyer">
+									</ul>
+								</div>
+						</form>
+					</article>
+			</section>
+
+			<? include('blocks/footer.html'); ?>
+
+		</div>
+	</body>
+</html>

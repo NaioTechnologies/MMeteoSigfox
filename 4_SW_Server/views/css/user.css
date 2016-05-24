@@ -1,0 +1,81 @@
+/*********************************/
+/** Login page                  **/ 
+/*********************************/
+
+form.user {
+	width: 50%;
+	margin: 50px auto;
+	text-align: center;
+}
+
+form.user input {
+	background: #eee;
+	border: none;
+	border-bottom: 1px solid #bbb;
+	width: 100%;
+	display: block;
+	margin: 10px 0 15px -10px;
+	padding: 10px;
+}
+
+form.user input {
+	font-size: 18px;
+}
+
+form.user input[type=submit] {
+	width: auto;
+	margin: auto;
+	border-bottom: 2px solid #86B60B;
+}
+
+
+/*********************************/
+/** Edit user page              **/ 
+/*********************************/
+
+form.edituser ul {
+	margin-left: 250px;
+	list-style-type: none;
+}
+form.edituser label {
+	width: 150px;
+	float: left;
+	margin: 13px 15px 0 0;
+	text-align: right;
+}
+form.edituser input {
+	background: #eee;
+	border: none;
+	border-bottom: 1px solid #bbb;
+	margin: 5px;
+	padding: 10px;
+	width: 250px;
+}
+
+form.edituser input[type=submit] {
+	width: 150px;
+	margin: 20px 0 0 170px;
+	border-bottom: 2px solid #86B60B;
+}
+
+form.edituser #picturebuttonscontainer {
+	text-align: left;
+	height: 0;
+	top: 106px;
+	left: 0;
+	position: relative;
+	z-index: 10; 
+}
+
+form.edituser #picturebuttons {
+	text-align: center;
+	line-height: 30px;
+	height: 30px;
+	display: inline-block;
+	background: #bbb;
+}
+
+form.edituser #picturebuttons a {
+	width: 30px;
+	display: inline-block;
+}

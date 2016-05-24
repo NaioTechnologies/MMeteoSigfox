@@ -1,0 +1,91 @@
+html, body {
+	font-family: Raleway;
+	color: #222;
+	margin: 0;
+	min-width: 1200px;
+	padding: 0;
+	height: 100%;
+}
+
+#container {
+	position: relative;
+
+	height:auto !important; /* real browsers */
+	height:100%; /* IE6: treaded as min-height*/
+
+	min-height:100%; /* real browsers */
+}
+
+a {
+	text-decoration: none;
+	color: #539925;
+}
+a:hover {
+	color: #76D03A;
+}
+
+section {
+	width: 1100px;
+	margin: 0 auto;
+	padding-bottom: 100px;
+}
+
+/************************* HEADER *************************/
+
+#Hcontent {
+	height: 55px;
+	line-height: 60px;
+	vertical-align: middle;
+	width: 1100px;
+	margin: 0 auto;
+}
+
+header {
+	height: 55px;
+	padding: 15px;
+	margin: 0 0 50px 0;
+	border-bottom: 1px solid #86B60B;
+}
+
+header nav {
+	float: right;
+}
+header nav a {
+	text-transform: uppercase;
+	color: #222;
+	margin-left: 25px;
+	letter-spacing: 1px;
+	font-size: 15px;
+}
+
+header p {
+	padding: 0;
+	margin: 0;
+}
+
+/************************* FOOTER *************************/
+
+footer {
+	background: #86B60A;
+	color: #eee;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+footer a {
+	color: white;
+}
+footer a:hover {
+	color: #222;
+}
+
+#Fcontent {
+	width: 1100px;
+	margin: auto;
+	padding: 5px 0;
+}
+
+#footernav {
+	float: right;
+}

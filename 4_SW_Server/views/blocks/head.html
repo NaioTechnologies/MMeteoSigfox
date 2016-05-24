@@ -1,0 +1,46 @@
+<!-- Fabriqué avec amour depuis Toulouse -->
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, height=device-height">
+		<link rel="shortcut icon" href="<?=$config['views_url']?>img/favicon.png">
+<?	if (isset($head['css'])) { 
+		foreach(explode(";",$head['css']) as $css) { ?>
+			<link rel="stylesheet" href="<?=$config['views_url']?>css/<?=$css?>"/>
+<?		}
+	}
+	else { ?>
+		<link rel="stylesheet" href="<?=$config['views_url']?>css/index.css"/>
+<?	} ?>
+		<link rel="stylesheet" href="<?=$config['views_url']?>css/fonts.css"/>
+<?	if (isset($head['third'])) { 
+		foreach(explode(";",$head['third']) as $third) { ?>
+			<script type="text/javascript" src="<?=$config['views_url']?>third/<?=$third?>"></script>
+<?		}
+	} ?>
+		<script type="text/javascript" src="<?=$config['views_url']?>third/jquery-2.2.4.min.js"></script>
+<?	if (isset($head['js'])) { 
+		foreach(explode(";",$head['js']) as $js) { ?>
+			<script type="text/javascript" src="<?=$config['views_url']?>js/<?=$js?>"></script>
+<?		}
+	} ?>
+
+<?	if (isset($head['title'])) { ?>
+		<title><?=$head['title']?> &mdash; M.Météo</title>
+<?	}
+	else { ?>
+		<title>M.Météo par Naïo Technologies</title>
+<?	} ?>
+<?	if (isset($head['description'])) { ?>
+		<meta name="description" content="<?=$head['description']?>">
+?	}
+	else { ?>
+		<meta name="description" content="M.Météo est un capteur connecté intelligent pour le monde agricole. Il est robuste, autonome, et simple d'utilisation. Retrouvez toutes les informations sur vos capteurs...">
+<?	} ?>
+<?	if (isset($head['keywords'])) { ?>
+		<meta name="keywords" content="<?=$head['keywords']?>">
+<?	}
+	else { ?>
+		<meta name="keywords" content="météo, naïo technologies, mmétéo, m.météo, agriculture, capteur, humidité, température, maraichage, connecté, SigFox, IoT">
+<?	} ?>
+	</head>
